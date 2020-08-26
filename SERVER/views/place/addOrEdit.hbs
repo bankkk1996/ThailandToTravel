@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+        <a class="navbar-brand" href="#">Travel to Thailand</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/place/list">Place </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/hotel/list">Hotel </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/restaurant/list">Restaurant </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/api/user/logout">Logout </a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+<div class="row">
+        <div class="col-md-10 offset-md-1" style="background-color: #fff; margin-top:25px;padding:20px">
+<h3>{{viewTitle}}</h3>
+<form action="/place" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{place._id}}">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" name="name" placeholder="Name" value="{{place.name}}">
+        <div class="text-danger">{{place.nameError}}</div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Latitude</label>
+            <input type="number" step="0.0000000000000001" class="form-control" name="lat" placeholder="Latitude" value="{{place.lat}}">
+            <div class="text-danger">{{place.latError}}</div>
+        </div>
+        <div class="form-group col-md-6">
+             <label>Longitude</label>
+             <input type="number" step="0.0000000000000001" class="form-control" name="lng" placeholder="Longitude" value="{{place.lng}}">
+             <div class="text-danger">{{place.lngError}}</div>
+         </div>
+    </div>
+    
+    <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" name="description" placeholder="Description" value="{{place.description}}">
+        <div class="text-danger">{{place.descriptionError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" name="title" placeholder="Title" value="{{place.title}}">
+        <div class="text-danger">{{place.titleError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Detail</label>
+        <textarea type="text" class="form-control" name="detail" placeholder="Detail" rows="4" cols="50">{{place.detail}}</textarea>
+        <div class="text-danger">{{place.detailError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Time</label>
+        <input type="text" class="form-control" name="time" placeholder="Time" value="{{place.time}}">
+        <div class="text-danger">{{place.timeError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Tel</label>
+        <input type="text" class="form-control" name="tel" placeholder="Tel" value="{{place.tel}}">
+        <div class="text-danger">{{place.telError}}</div>
+    </div>
+    <div class="form-group">
+        <label>Activity</label>
+        <input type="text" class="form-control" name="activity" placeholder="Activity" value="{{place.activity}}">
+        <div class="text-danger">{{place.activityError}}</div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+        <a class="btn btn-secondary" href="/place/list"><i class="fa fa-list-alt"></i> View All</a>
+    </div>
+</form>
+</div>
+</div>
